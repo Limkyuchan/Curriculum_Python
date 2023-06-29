@@ -1,0 +1,123 @@
+exam.py
+
+
+# OOP & class
+
+"""
+< 다중 상속 >
+- 여러 클래스를 상속
+- 다양하게 상속을 활용할 수 있음
+
+
+< isinstance 함수 >
+- 객체 타입 확인
+- 참조하는 객체가 해당 클래스로 만들어진 것인지 판별(True/False)
+- 원형: isinstance(객체참조이름(변수), 클래스)
+
+
+< 클래스의 관계 표현 >
+1) is - a 관계 (상속을 통해 표현)
+- 한 클래스가 다른 클래스의 하위 클래스임을 나타냄
+- 하위 클래스는 상위 클래스의 모든 속성과 메서드를 상속받음
+- 이 관계는 일반적으로 "A는 B의 종류다" 라는 형태로 설명
+- ex) "강아지" 클래스가 "동물" 클래스의 하위 클래스라면, 
+      "강아지는 동물의 종류이다" 라고 할 수 있다.
+
+2) has - a 관계 (포함하는 관계)
+- 한 클래스의 객체가 다른 클래스의 객체를 속성으로 포함하고 있는 경우를 나타냄
+- 이 관계는 일반적으로 "A는 B를 가지고 있다"라는 형태로 설명
+- ex) "자동차" 클래스가 "엔진" 클래스의 객체를 속성으로 가진다면,
+      "자동차는 엔진을 가지고 있다" 라고 할 수 있다.
+
+"""
+
+
+# Module & Package
+
+"""  package 폴더, 강사님 자료 참고
+
+
+package 
+- __init__.py 파일이 있어야 해당 폴더를 파이썬에서 패키지라고 인식한다.
+
+
+특정 패키지의 모듈이 다른 패키지의 모듈을 포함하는 형태
+- .. : 상위 패키지
+- . : 현재 패키지
+
+"""
+
+
+
+
+
+
+
+
+실습.py
+
+
+# # OOP & Class
+
+# # Q1. 상속 활용 개념이해 실습
+# # 1) 문자열을 저장하는 클래스 정의(MyStr)
+# #   - 길이를 반환하는 기능을 가짐
+
+# class MyStr:
+
+#     def __init__(self, st):
+#         self.st = st
+
+#     def size(self):
+#         return f"길이: {len(self.st)}"
+
+# # 2) 문자열을 저장하는 클래스 정의(MyStr2)
+# #   - 길이를 반환하는 기능을 가짐
+# #   - 대문자 개수를 반환하는 기능을 가짐
+
+# class MyStr2(MyStr):
+
+#     def __init__(self, st):
+#         super().__init__(st)
+
+#     def upper_count(self):
+#         cnt = 0
+#         for i in self.st:
+#             if 65 <= ord(i) <= 90:
+#                 cnt += 1
+#         return f"대문자 개수: {cnt}"
+
+
+# # 3) 문자열을 저장하는 클래스 정의(MyStr3)
+# #   - 길이를 반환하는 기능을 가짐
+# #   - 대문자 개수를 반환하는 기능을 가짐
+# #   - 소문자 개수를 반환하는 기능을 가짐
+
+# class MyStr3(MyStr2):
+
+#     def __init__(self, st):
+#         super().__init__(st)
+        
+#     def lower_count(self):
+#         cnt = 0
+#         for i in self.st:
+#             if 97 <= ord(i) <= 122:
+#                 cnt +=1
+#         return f"소문자 개수: {cnt}"
+
+
+# ms1 = MyStr("hello WelcomE!")
+# print(ms1.size())
+# print()
+# ms2 = MyStr2("hello WelcomE!")
+# print(ms2.size())
+# print(ms2.upper_count())
+# print()
+# ms3 = MyStr3("hello WelcomE!")
+# print(ms3.size())
+# print(ms3.upper_count())
+# print(ms3.lower_count())
+
+
+
+

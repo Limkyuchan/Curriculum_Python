@@ -1,0 +1,78 @@
+C:\Users\denni>cd C:\Users\denni\OneDrive\바탕 화면\퍼블릭 클라우드 서비스를 활용한 파이썬 기반\python\sqlite-tools-win32-x86-3410200
+
+C:\Users\denni\OneDrive\바탕 화면\퍼블릭 클라우드 서비스를 활용한 파이썬 기반\python\sqlite-tools-win32-x86-3410200> dir
+ C 드라이브의 볼륨에는 이름이 없습니다.
+ 볼륨 일련 번호: 34CB-842B
+
+ C:\Users\denni\OneDrive\바탕 화면\퍼블릭 클라우드 서비스를 활용한 파이썬 기반\python\sqlite-tools-win32-x86-3410200 디렉터리
+
+2023-05-02  오후 02:26    <DIR>          .
+2023-05-02  오후 02:26    <DIR>          ..
+2023-05-02  오후 02:26           587,776 sqldiff.exe
+2023-05-02  오후 02:26         1,133,056 sqlite3.exe
+2023-05-02  오후 02:26         2,102,784 sqlite3_analyzer.exe
+               3개 파일           3,823,616 바이트
+               2개 디렉터리  498,844,160,000 바이트 남음
+
+C:\Users\denni\OneDrive\바탕 화면\퍼블릭 클라우드 서비스를 활용한 파이썬 기반\python\sqlite-tools-win32-x86-3410200>sqlite3.exe testdb.db
+
+
+
+
+
+
+CREATE TABLE INFO (
+NO INTEGER PRIMARY KEY AUTOINCREMENT,
+NAME TEXT(20) NOT NULL,
+AGE INTEGER CHECK (1 < AGE AND AGE < 120),
+BTYPE TEXT(2),
+BIRTH TEXT
+);
+
+# 값 저장 : ''	
+
+
+INSERT INTO INFO (NO, NAME, AGE, BTYPE, BIRTH)
+VALUES (1, '홍길동', 20, 'AB', '2020-01-01');
+
+
+INSERT INTO INFO (NAME, AGE, BTYPE, BIRTH)
+VALUES ('이순신', 28, 'B', '1999-01-23');
+
+
+
+
+
+
+----------------------------------------------------------
+
+언급된 용어들
+
+RDB (관계형 데이터베이스)
+Database
+DBMS
+
+TABLE
+ROW(행), COLLUMN(열)
+
+제약조건(CONSTRAINT)
+- PRIMARY KEY, NOT NULL, CHECK...
+- FOREIGN KEY
+
+자료형
+- INTEGER, TEXT... 등
+
+DDL / DML / DCL
+
+테이블 생성/수정/삭제
+- CREATE
+- DROP
+
+데이터 삽입/조회/수정/삭제 (CRUD)
+- INSERT / SELECT / UPDATE / DELETE
+
+트랜젝션
+- BEGIN
+- COMMIT
+- ROOLBACK
+

@@ -1,0 +1,5 @@
+print("hello\tworld")
+print("hi\neverybody!!")
+print("\\n: 개행문자")
+print("I\'m Teacher")
+print("She said. \"I am Teacher\"")

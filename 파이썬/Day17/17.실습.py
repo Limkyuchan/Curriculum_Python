@@ -1,0 +1,127 @@
+
+# OOP & class
+
+# Q1. 반과 전교학생의 성적처리 프로그램
+#     정의된 클래스로 그림의 결과가 나오도록 입/출력 기능을 작성하세요.
+#     학급 수와 인원, 과목 개수는 변경 가능
+
+class SchoolRoom:
+
+    def __init__(self):
+        self.room1 = []
+        self.room2 = []
+
+    def room1_student(self, cnt):
+        self.cnt = cnt
+        for i in range(cnt):
+            student = input("학생 이름: ")
+            self.room1.append(student)
+
+    def room2_student(self, cnt):
+        self.cnt = cnt
+        for i in range(cnt):
+            student = input("학생 이름: ")
+            self.room2.append(student)
+
+    def get_total(self):
+        total = self.room1 + self.room2
+        return total
+    
+
+
+class Grade:
+
+    def __init__(self):
+        self.sub = []
+        self.score = []
+        self.total = []
+        self.room1rank = []
+        self.room2rank = []
+        self.totalrank = []
+
+    def school_subject(self, cnt = 0):
+        print()
+        self.cnt = cnt
+        for i in range(cnt):
+            subject = input("과목 입력: ")
+            self.sub.append(subject)
+
+    def student_score(self, student):
+        self.student = student
+        print()
+        for i in range(len(self.student.get_total())):
+            for j in range(len(self.sub)):
+                print(self.student.get_total()[i],"학생" ,end = "")
+                score = int(input(f" {self.sub[j]}점수 입력: "))
+                self.score.append(score)
+
+    def total_score(self):
+        for i in range(len(self.score)):
+            if i % len(self.sub) == 0:
+                self.total.append(self.score[i] + self.score[i+1])
+   
+    def room1_rank(self, student):
+        self.student = student
+        self.room1rank = self.total[:len(self.student.room1)]
+        self.room1rank_result = []
+        for i in range(len(self.room1rank)):
+            rank = 1
+            for j in range(len(self.room1rank)):
+                if self.room1rank[i] < self.room1rank[j]:
+                    rank += 1
+            self.room1rank_result.append(rank)
+
+    def room2_rank(self, student):
+        self.student = student
+        self.room2rank = self.total[len(self.student.room1):]
+        self.room2rank_result = []
+        for i in range(len(self.room2rank)):
+            rank = 1
+            for j in range(len(self.room2rank)):
+                if self.room2rank[i] < self.room2rank[j]:
+                    rank += 1
+            self.room2rank_result.append(rank)
+
+    def total_rank(self, student):
+        self.student = student
+        self.totalrank = self.total
+        self.totalrank_result = []
+        for i in range(len(self.totalrank)):
+            rank = 1
+            for j in range(len(self.totalrank)):
+                if self.totalrank[i] < self.totalrank[j]:
+                    rank += 1
+            self.totalrank_result.append(rank)
+        
+
+    def result(self, student):
+
+        print(f"이름\t국어\t영어\t총점\t반석차\t전교석차\t 평균")
+
+        su = 0
+        for i in range(len(self.student.get_total())):
+            print(self.student.get_total()[i],"\t",end = "")
+            print(self.score[su],"\t",self.score[su+1],"\t", self.total[i], "\t", end = "")
+
+            if i < len(self.student.room1):
+                print("  ",self.room1rank_result[i],"\t", end = "")
+            else:
+                print("  ",self.room2rank_result[i - len(self.student.room1)],"\t", end = "")
+
+            print("  ",self.totalrank_result[i], "\t\t", round(self.total[i]/2, 2))
+            su += len(self.sub)
+
+sr = SchoolRoom()
+sr.room1_student(2)
+sr.room2_student(3)
+
+
+gd = Grade()
+gd.school_subject(2)
+gd.student_score(sr)
+gd.total_score()
+gd.room1_rank(sr)
+gd.room2_rank(sr)
+gd.total_rank(sr)
+
+gd.result(sr)

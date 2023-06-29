@@ -1,0 +1,96 @@
+exam01.py
+
+
+
+## memory (Ram)
+# stack   변수
+# heap    변수
+# Data    상수
+# text    코드
+
+print('hello 파이썬' \
+      'world' \
+      '여러줄' \
+      '테스트')
+
+
+
+
+
+
+
+
+
+
+
+
+실습.py
+
+
+# Q1. 변수를 사용하여 다음과 같이 출력
+
+num1 = 10
+num2 = 20
+num3 = num1 + num2
+print(f"Num1({num1}) + num2({num2}) = {num3}")
+
+
+score = 100
+print(f"파이썬{score}점")
+
+
+age = 27
+print(f"나는 {age}살이다.")
+
+
+py = 50
+c = 60
+ja = 70
+total = py + c + ja
+avg = total/3
+print("합계는", total)
+print("평균은", avg)
+
+
+
+
+# Q2. 11개의 지하철 역을 지나왔다. 출발역에서 도착역까지 37분 걸렸다면 한 역을 지나는데 걸리는 시간은?
+sta = 11
+min = 37
+t_time = min/sta 
+print("걸리는 시간: ", round(t_time, 2) )
+
+
+# Q3. 호텔 한 층의 높이는 260cm. 총 14개의 층을 쓰고 잇으며 1층은 500.23cm라면 총 몇m인가? (소수점 3자리)
+height = 2.6
+hei_1 = 5.0023
+total = hei_1 + height*13
+print("건물높이: ", round(total, 3))
+
+
+# Q4. 키와 몸무게 출력. (소수점 1자리)
+tall = 174.0
+kg = 72.5
+print(f"키: {tall}\t몸무게: {kg}")
+
+
+# Q5. 100m를 가는데 11.27초가 걸렸다. 1시간 후 몇 km를 갈 수 있을까? (소수점 2자리)
+time = 11.27 
+meter = 0.1  
+ans = (meter/time)*3600
+print("1시간 후 거리: ", round(ans, 2))
+
+
+
+# Q6. 다음 결과가 출력되도록 코딩하시오.
+
+name = "홍길동"
+name2 = "이순신"
+
+age = 20
+age2 = 28
+
+adr = "산골짜기"
+adr2 = "바다"
+
+print("="*30,"\n","이름\t 나이\t 주소\n","="*30,"\n", name,"\t",age,"\t",adr,"\n", name2,"\t",age2,"\t",adr2)

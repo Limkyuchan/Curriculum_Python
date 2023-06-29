@@ -1,0 +1,334 @@
+exam.py
+
+# < 튜플 >
+# 파이썬의 튜플(Tuple)은 불변(immutable)하고 순차적인 데이터 구조로,
+# 여러 값들을 저장하고 관리
+# 변경할 수 없는 특성 때문에 리스트보다 메모리 효율이 높음
+# 데이터가 변경될 수 없는 경우에 적합한 데이터 구조
+# 튜플은 소괄호( )를 사용하여 표현
+# 튜플의 요소들은 쉼표, 로 구분
+
+# 튜플 생성 tuple()
+empty_tuple = ()
+
+# 단일 요소 튜플 생성 시 쉼표 필요
+single_item_tuple = (1,)
+
+# 정수형 튜플 생성
+numbers = (1, 2, 3, 4, 5)
+
+# 문자형 튜플 생성
+fruits = ("apple", "banana", "cherry")
+
+# 다양한 자료형이 포함된 튜플 생성
+mixed_tuple = (1, "apple", 3.14)
+
+# 튜플 인덱싱(Indexing)
+varsfruits = ("apple", "banana", "cherry")
+print(fruits[0])
+
+# 튜플 슬라이싱(Slicing)
+numbers = (1,2,3,4,5)
+print(numbers[1:4])
+
+# 튜플 길이 확인
+fruits = ("apple", "banana", "cherry")
+print(len(fruits))
+
+# 튜플 요소의 개수 세기
+numbers = (1, 2, 3, 2, 1, 3, 1, 1, 2, 3)
+print(numbers.count(1))
+
+
+
+
+
+
+
+exam02.py
+
+# < 세트 >
+# set(집합)는 순서가 없고, 중복을 허용하지 않는 가변(mutable) 데이터 구조
+# 중복을 제거하는 데 사용할 수 있음
+# set(집합)는 중괄호 { }를 사용하여 표현
+# 요소들은 쉼표, 로 구분
+
+# 빈 set 생성
+empty_set = set()
+
+# 정수형 set 생성
+numbers = {1, 2, 3, 4, 5}
+
+# 문자열 set 생성
+fruits = {"apple", "banana", "cherry"}
+
+# 다양한 자료형이 포함된 set 생성
+mixed_set = {1, "apple", 3.14}
+
+# set에 요소 추가 (add)
+fruits = {"apple", "banana", "cherry"}
+fruits.add("orange")
+print(fruits)       # {'apple', 'banana', 'cherry', 'orange'}
+
+# set에서 요소 제거 (remove)
+fruits = {"apple", "banana", "cherry"}
+fruits.remove("banana")
+print(fruits)       # {'apple', 'cherry'}
+
+
+# 집합 연산
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+
+# 합집합
+print(A | B)  # {1, 2, 3, 4, 5, 6, 7, 8}
+
+# 교집합
+print(A & B)  # {4, 5}
+
+# 차집합
+print(A - B)  # {1, 2, 3}
+
+# 대칭차집합 (교집합의 반대개념)
+print(A ^ B)  # {1, 2, 3, 6, 7, 8}
+
+
+
+
+
+
+exam03.py
+
+# < 딕셔너리 >
+# 딕셔너리는 키(key)와 값(value) 쌍을 저장하는 가변(mutable) 데이터 구조
+# 딕셔너리는 중괄호 { }를 사용하여 표현
+# 키와 값은 콜론: 으로 구분하고 쌍들은 쉼표, 로 구분
+
+# 딕셔너리 생성 및 초기화
+empty_dict = {}     # dict() 도 가능
+person = {
+    "name" : "John",
+    "age" : 30,
+    "city" : "New York"
+}    # 키와 값 쌍을 가진 딕셔너리 생성
+
+
+# 딕셔너리에서 키를 사용하여 값에 접근하기
+person = {
+    "name" : "John",
+    "age" : 30,
+    "city" : "New York"
+}   
+print(person["name"])   # -> "John"
+print(person["age"])    # -> 30
+print(person.__getitem__('city'))   # -> "New York"
+
+
+# 딕셔너리에 새로운 키-값 쌍 추가 및 제거하기
+person = {
+    "name" : "John",
+    "age" : 30,
+    "city" : "New York"
+}   
+person["country"] = "USA"   # 새로운 키-값 쌍 추가
+person.__setitem__('address', 'Seoul')
+
+del person["age"]           # "age" 키와 그에 해당하는 값을 제거
+person.__delitem__('city')  # "city" 키와 그에 해당하는 값을 제거
+
+
+
+# 딕셔너리의 키, 값, 키-값 쌍 가져오기
+person = {
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+
+keys = person.keys()  # 키 목록 가져오기
+print(keys)  # dict_keys(['name', 'age', 'city'])
+print(type(keys))
+for key in keys:
+    print(f'{key}:{person[key]}')
+print()
+
+values = person.values()  # 값 목록 가져오기
+print(values)  # dict_values(['John', 30, 'New York'])
+print(type(values))
+for value in values:
+    print(value)
+print()
+
+items = person.items()  # 키-값 쌍 가져오기
+print(items)  # dict_items([('name', 'John'), ('age', 30), ('city', 'New York')])
+print(type(items))
+for k, v in items:
+    print(f'{k}:{v}')
+print()
+
+for k, v in person.items():
+    print(f'{k}:{v}')
+
+
+
+
+# 딕셔너리를 사용하여 여러 학생들의 과목별 성적을 저장하고, 
+# 각 학생의 평균 성적을 계산하는 프로그램
+
+# 학생들의 과목별 성적 딕셔너리
+grades = {
+    "Alice": {"math": 90, "history": 80, "chemistry": 85},
+    "Bob": {"math": 78, "history": 92, "chemistry": 89},
+    "Charlie": {"math": 85, "history": 85, "chemistry": 95},
+    "David": {"math": 92, "history": 88, "chemistry": 75}
+}
+
+# 각 학생의 평균 성적을 저장할 딕셔너리
+average_grades = {}
+
+# 평균 성적 계산
+for student, subjects in grades.items():
+    total_score = 0
+    subject_count = 0
+    for score in subjects.values():
+        total_score += score
+        subject_count += 1
+    average_grades[student] = total_score / subject_count
+
+# 결과 출력
+for student, average_grade in average_grades.items():
+    print(f"{student}'s average grade is {average_grade:.2f}")
+
+
+
+
+
+
+
+실습.py
+
+
+
+# 파이썬 Collection 자료형
+
+# Q1 ~ Q3. 다음과 같은 튜플 생성
+base_tup = (32, 12, 54, 22, 76, 77, 45, 44, 77, 54, 32)
+
+# Q1. 생성한 튜플의 중복을 제거하여 unique_list 이름의 리스트에 저장
+unique_list = set(base_tup)
+unique_list = list(unique_list)
+print(f"unique_list : {unique_list}")
+
+# Q2. 알파벳을 키로 하여 unique_list 의 값들을 unique_dict 이름의 딕셔너리로 저장
+unique_dict = {}
+n = 65
+for key in unique_list:
+    unique_dict[chr(n)] = key
+    n += 1
+print(f"unique_dict : {unique_dict}")
+
+# Q3. 딕셔너리에서 값을 기준으로 오름차순으로 정렬하여 sort_tup 이름의 튜플에 저장하고 출력
+sort_tup = sorted(unique_dict.items(), key = lambda item: item[1] )
+sort_tup = tuple(sort_tup)
+print(f"sort_tup : {sort_tup}")
+
+
+# Q4. 로또 1 ~ 100회 추첨 번호 통계 구하기
+from random import randint
+
+# 1)
+print("="*10, "1 ~ 100회 당첨 번호", "="*10)
+print()
+total_li = []
+for i in range(1,101):
+    li = []
+    while len(li) < 7:
+        su = randint(1,45)
+        if su < 10:
+            su = str(su)
+            su = "0" + su
+
+        if su not in li:
+            li.append(su)
+
+    total_li += li
+
+    if i < 10:
+        i = str(i)
+        i = "0" + i
+
+    print(f"■{i}회차■  {li[0]} {li[1]} {li[2]} {li[3]} {li[4]} {li[5]}\tBonus[{li[-1]}]")
+
+print()
+total_li = list(map(int, total_li))
+
+print("="*27, "1 ~ 100회 당첨 번호 통계", "="*27)
+print()
+
+for i in range(1,46):
+    if i < 10:
+        i = str(i)
+        i = "0" + i
+
+    result = total_li.count(int(i))
+    if result < 10:
+        result = str(result)
+        result = "0" + result
+    
+    print(f"[{i}]번 : ({result})회", end = "\t")
+
+    if int(i) % 5 == 0:
+        print()
+        
+print()
+print()
+
+
+# 2) 딕셔너리 활용
+
+# 로또 번호 랜덤 수 7개 추출
+def random_number(n):
+    number = set()
+    while len(number) < 7:
+        a = randint(1,45)
+        number.add(a)
+    return number
+
+numbers = []
+dict = {}
+for i in range(1,101):
+    dict[i] = random_number(i)
+    numbers += random_number(i)
+
+# dict = {}
+# numbers = []
+
+# for i in range(1,101):
+#     number = set()
+#     while len(number) < 7:
+#         su = randint(1,45)
+#         number.add(su)
+#     dict[i] = number
+#     numbers += number
+
+
+# 임의 당첨 번호 생성
+for i in range(1,101):
+    print(f"■{i}회차■  " , end = " ")
+    for j in range(7):
+        if j == 6:
+            print(f"\tBonus[{list(dict[i])[j]}]")
+        else:
+            print(f"{list(dict[i])[j]}", end = " ")
+
+# 당첨 번호 통계 생성
+for i in range(1,46):
+    if i < 10:
+        i = str(i)
+        i = "0" + i
+    print(f"[{i}]번: ({numbers.count(int(i))})회", end = "\t")
+    
+    if int(i) % 5 == 0:
+        print()
+
+
